@@ -1,0 +1,43 @@
+Hello everyone! Thank you for joining me, today as I present our project titled "Predicting the Risk Level of Patients with COVID-19." I’m [Your Name], and I’m here representing Team 26, which includes my colleagues Nimish, Tarun, Vasu, and Hemanth. We're excited to share our findings and methodology with you.
+
+The COVID-19 pandemic started in Wuhan, China, and has created a major health crisis around the world. Millions of people have been affected, and many have died. We felt It's important to predict the severity of a patient's illness which is essential for better use of healthcare resources and improving patient care.
+Our goal is to create machine learning models that can predict the risk level of COVID-19 patients. We'll use data like symptoms, medical history, and demographic details to estimate the chances of a patient becoming seriously ill.
+
+Thanks to Kaggle for providing us with real-time COVID-19 patient data, comprising approximately 1 million rows and 21 columns, which represent our predictors.
+
+Approach:
+
+In our data preprocessing, we cleaned the data and split it into 80% for training and 20% for testing. During our exploratory data analysis, we observed strong correlations between certain features like age, intubation, and ICU admission with patient outcomes. However, when we applied different models to the entire dataset, the accuracy was not satisfactory (for example, the logistic regression model achieved only 16% accuracy).
+
+To address this, we reviewed various studies to understand different approaches and proposed a clustering method to utilize the data more accurately. We used Principal Component Analysis (PCA) to identify patterns in the data, revealing six distinct groups, as shown in the graph. We then applied K-means clustering to separate these groups and named them individually. Finally, we applied multinomial logistic regression to each cluster individually, rather than to the whole dataset.
+
+Results: 
+We found that our proposed model achieved an accuracy of 51%, significantly higher than the 16% accuracy of a logistic regression model applied to the entire dataset. 
+This demonstrates the effectiveness of clustering before applying predictive models.
+
+In summary, our project highlights the importance of identifying patterns within the data and applying tailored models to each group. This approach not only improves accuracy but also provides valuable insights for healthcare providers. Moving forward, we plan to explore more advanced models to capture complex patterns within each cluster.
+
+Yotube Content:
+---
+
+Hello everyone! Thank you for joining me today as I present our project titled "Predicting the Risk Level of Patients with COVID-19." I’m [Your Name], representing Team 26, which includes my colleagues Nimish, Tarun, Vasu, and Hemanth. We're excited to share our findings and methodology with you.
+
+The COVID-19 pandemic started in Wuhan, China, and has created a major health crisis worldwide. Millions of people have been affected, and many have died. It's important to predict the severity of a patient's illness to better utilize healthcare resources and improve patient care. Our goal is to create machine learning models that can predict the risk level of COVID-19 patients. We'll use data such as symptoms, medical history, and demographic details to estimate the likelihood of a patient becoming seriously ill.
+
+Thanks to Kaggle for providing us with real-time COVID-19 patient data, comprising approximately 1 million rows and 21 columns, which represent our predictors.
+
+**Approach:**
+
+In our data preprocessing, we cleaned the data and split it into 80% for training and 20% for testing. During our exploratory data analysis, we observed strong correlations between certain features, like age, intubation, and ICU admission, with patient outcomes. However, when we applied different models to the entire dataset, the accuracy was not satisfactory (for example, the logistic regression model achieved only 16% accuracy).
+
+To address this, we reviewed various studies to understand different approaches and proposed a clustering method to utilize the data more accurately. We used Principal Component Analysis (PCA) to identify patterns in the data, revealing six distinct groups, as shown in the graph. We then applied K-means clustering to separate these groups. Finally, we applied multinomial logistic regression to each cluster individually, rather than to the whole dataset.
+
+**Results:**
+
+We found that our proposed model achieved an accuracy of 51%, significantly higher than the 16% accuracy of a logistic regression model applied to the entire dataset. This demonstrates the effectiveness of clustering before applying predictive models.
+
+In summary, our project highlights the importance of identifying patterns within the data and applying tailored models to each group. This approach not only improves accuracy but also provides valuable insights for healthcare providers. Moving forward, we plan to explore more advanced models to capture complex patterns within each cluster.
+
+---
+
+This version enhances the clarity and flow of the content while maintaining the original information.

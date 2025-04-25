@@ -1,0 +1,72 @@
+---
+title: "project_new"
+output: html_document
+date: "2024-05-04"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ISLR2)
+library(ggplot2)
+library(MASS)
+library(car)
+library(class)
+#library(data.table)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+covid_data <- read.csv("C:\\Users\\vasub\\Desktop\\UB Learn\\EAS 508-Statistical Learning and Data Mining-1\\Group_project\\Covid Data_original.csv", header = TRUE, sep = ",")
+covid_data$DATE_DIED = ifelse(covid_data$DATE_DIED=="9999-99-99",0,1)
+index = sample(2,nrow(covid_data),prob = c(0.7,0.3),replace = TRUE)
+train_data = covid_data[index==1,]
+test_data = covid_data[index==2,]
+covid_data = train_data
+for (iterator in colnames(covid_data)){
+  #print(covid_data[[iterator]])
+  covid_data[[iterator]]<-replace(covid_data[[iterator]],covid_data[[iterator]]==97 | covid_data[[iterator]]==98 | covid_data[[iterator]]==99 ,NaN)
+  #covid_data[iterator]<-replace(covid_data[iterator], covid_data[iterator]==97, NaN) 
+  
+    #covid_data[iterator] <- ifelse(covid_data[iterator]==97 | covid_data[iterator]==98,NaN, covid_data[iterator])
+  ##data$TypeSUV <- ifelse(data$Type=="SUV",1,0) ##Creating Dummy variables
+}
+#covid_data$DIABETES <- ifelse(covid_data$DIABETES==NaN,1,DIABETES)
+#covid_data$DIABETES <- ifelse(covid_data$DIABETES==NaN, 0,DIABETES)
+#nafill(covid_data$DIABETES, fill = 0)
+#plot(covid_data$CLASIFFICATION_FINAL,covid_data$PREGNANT)
+dis <- c("PNEUMONIA","DIABETES","HIPERTENSION","OBESITY")
+
+#covid_data[['PNEUMONIA']][is.nan(covid_data[['PNEUMONIA']])]<-1  
+#covid_data[['DIABETES']][is.nan(covid_data[['DIABETES']])]<-1 
+#covid_data[['HIPETENSION']][is.nan(covid_data[['HIPETENSION']])]<-1 
+#covid_data[['OBESITY']][is.nan(covid_data[['OBESITY']])]<-1 
+for (col in dis){
+   covid_data[[col]][is.nan(covid_data[[col]])] <- 1
+}
+for ( col in colnames(covid_data)){
+   covid_data[[col]][is.nan(covid_data[[col]])] <- 2
+}
+summary(covid_data)
+head(covid_data,10)
+f_covid_data <- subset(covid_data, select = -c(DATE_DIED) )
+print
+pairs(f_covid_data ,main="Scatter plot") 
+
+
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
