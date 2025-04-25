@@ -79,10 +79,10 @@ K=4–6 provided finer-grained insights like sub-stratification of middle-risk g
 
 📊 Example Cluster Profile (K=3):
 
-Cluster	Size (%)	Mean Age	ICU Rate	Mortality Rate
-0	37%	24.6	1.2%	0.1%
-1	42%	56.8	35.5%	18.7%
-2	21%	68.3	48.9%	65.3%
+Cluster	 Size (%)     Mean Age	ICU Rate	Mortality Rate
+0	 37%	       24.6	 1.2%	           0.1%
+1	 42%	       56.8	 35.5%	           18.7%
+2	 21%	       68.3	 48.9%	           65.3%
 🧪 Tools & Technologies
 Python, Pandas, NumPy
 
